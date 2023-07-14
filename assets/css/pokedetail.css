@@ -1,9 +1,9 @@
 #popup {
   position: fixed;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1.5px;
   top: 0;
   left: 0;
   height: 100%;
@@ -17,7 +17,7 @@
   border: 1px solid black;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.459);
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 8px;
 }
 
 .pokeHeader {
@@ -100,6 +100,7 @@
   border-radius: 0.8rem;
   margin: auto;
   display: block;
+  overflow-y: auto;
 }
 
 .pokeDetailData {
@@ -121,6 +122,22 @@
   padding: 0;
   font-size: 1rem;
   text-align: center;
+  height:100px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #661a8d00 #00000057;
+}
+
+.pokeDetailStatus::-webkit-scrollbar {
+  width: 4px;
+}
+
+.pokeDetailStatus::-webkit-scrollbar-track {
+  background-color: #00000057;
+}
+
+.pokeDetailStatus::-webkit-scrollbar-thumb {
+  background-color: #F3E5F5;
 }
 
 .statusName {
@@ -132,51 +149,4 @@
 
 .statusNum {
   display: inline-block;
-}
-
-@media screen and (max-width: 300px) {
-  #goBackButton img {
-    width: 1.5rem;
-    transition: width 0.2s;
-  }
-  
-  #goBackButton img:hover {
-    width: 1.7rem;
-  }
-  
-  #pokeDetailName {
-    font-size: 1.8rem;
-  }
-  
-  #pokeDetailNumber {
-    font-size: 0.8rem;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  #goBackButton img {
-    width: 3rem;
-    transition: width 0.2s;
-  }
-
-  #goBackButton img:hover {
-    width: 3.2rem;
-  }
-}
-
-@media screen and (min-width: 1300px) {
-  .pokeDetailContent {
-    max-width: 1300px;
-    margin: 0 auto;
-  }
-  .pokeDetailImage {
-    width: 15rem;
-  }
-  .pokeDetailContent {
-    max-width: 1300px;
-    margin: 0 auto;
-  }
-  .pokeDetailImage {
-    width: 18rem;
-  }
 }
